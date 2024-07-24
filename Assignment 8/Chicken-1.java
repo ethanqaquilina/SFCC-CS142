@@ -4,7 +4,7 @@ import java.util.Random;
 
 import utilities.Utilities;
 
-public class Chicken implements iDC {
+public abstract class Chicken implements iDC {
 
 	private String name;
 	private char symbol;
@@ -145,7 +145,7 @@ public class Chicken implements iDC {
 		this.current_hp = set_vars(0, this.max_hp, this.current_hp - damage);
 	}
 
-	private int[] new_increment() {
+	protected int[] new_increment() {
 		int[] increment = new int[2];
 		switch (this.direction) {
 		case 1:

@@ -7,7 +7,7 @@ import utilities.Utilities;
 public class Game {
 
 	private Scanner scan;
-	private boolean keep_playing = true, game_over = false;
+	boolean game_over = false;
 	int turn;
 	Chicken C1, C2;
 	private board board;
@@ -85,7 +85,6 @@ public class Game {
 
 	private void initialize_game() {
 		this.turn = 0;
-		this.keep_playing = true;
 		this.game_over = false;
 		this.board = new board();
 		this.initialize_characters();
@@ -160,7 +159,7 @@ public class Game {
 		int damage_min = 3;
 		int damage_max = 20;
 		int direction = 3;
-		this.C1 = new Chicken(name, hp, x_coord, y_coord, base_chance, damage_min, damage_max, direction);
+		this.C1 = new Offensive_Chicken(name, hp, x_coord, y_coord, base_chance, damage_min, damage_max, direction);
 		this.board.mark_board(y_coord, x_coord, C1.get_symbol());
 	}
 
@@ -174,7 +173,7 @@ public class Game {
 		int damage_min = 3;
 		int damage_max = 20;
 		int direction = 1;
-		this.C2 = new Chicken(name, hp, x_coord, y_coord, base_chance, damage_min, damage_max, direction);
+		this.C2 = new Defensive_Chicken(name, hp, x_coord, y_coord, base_chance, damage_min, damage_max, direction);
 		this.board.mark_board(y_coord, x_coord, C2.get_symbol());
 
 	}
